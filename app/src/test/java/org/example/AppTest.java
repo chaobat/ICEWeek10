@@ -3,12 +3,19 @@
  */
 package org.example;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 class AppTest {
+     private static final Logger logger = LoggerFactory.getLogger(App.class);
+
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
+        logger.info("App started.");
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+        logger.info("App finished.");
     }
 }
